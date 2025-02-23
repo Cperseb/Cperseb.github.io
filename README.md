@@ -35,7 +35,7 @@ Además, está alojado en **GitHub Pages** para una mayor accesibilidad.
 
 ---
 
-## 📬 Contacto  
+## 📬 ContactoS  
 📧 **Email:** cperseb@gmail.com  
 🔗 **LinkedIn:** [Carlos Pertierra](https://www.linkedin.com/in/carlos-pertierra)  
 🌍 **Sitio Web:** [Cperseb.github.io](https://Cperseb.github.io)  
