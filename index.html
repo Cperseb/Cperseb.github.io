@@ -1,7 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Personal</title>
+    <link rel="stylesheet" href="carlos.css">
+    <script>
+        function mostrarSeccion(id) {
+            let secciones = document.querySelectorAll('.seccion');
+            secciones.forEach(seccion => seccion.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+
+            // Resaltar el botón activo
+            let botones = document.querySelectorAll('nav a');
+            botones.forEach(btn => btn.classList.remove('activo'));
+            document.querySelector(`nav a[data-section="${id}"]`).classList.add('activo');
+        }
+    </script>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+    <header>
+        <h1>Mi Página Personal</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" data-section="inicio" class="activo" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+            <li><a href="#" data-section="curriculum" onclick="mostrarSeccion('curriculum')">Currículum</a></li>
+            <li><a href="#" data-section="servicios" onclick="mostrarSeccion('servicios')">Servicios</a></li>
+            <li><a href="#" data-section="portafolio" onclick="mostrarSeccion('portafolio')">Portafolio</a></li>
+            <li><a href="#" data-section="noticias" onclick="mostrarSeccion('noticias')">Noticias</a></li>
+            <li><a href="#" data-section="contacto" onclick="mostrarSeccion('contacto')">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="inicio" class="seccion" style="display: block;">
+            <h2>Bienvenido a mi página personal</h2>
+            <div class="profile-pic">
+                <img src="carlosFoto.jpeg" alt="Foto de perfil">
+            </div>
+            <p>Hola, soy Carlos, un hombre de 21 años que se ha formado en Desarrollador de Aplicaciones Web y esta en continuo aprendizaje.</p>
+        </section>
+        <section id="curriculum" class="seccion">
+            <h2>Mi Currículum</h2>
+            <p>-Desarrollador de aplicaciones web</p>
+            <p>-He realizado los siguientes estudios: ESO,bachillerato y DAW(esta ultima esta en curso)</p>
+        </section>
+        <section id="servicios" class="seccion">
+            <h2>Mis Servicios</h2>
+            <p>Soy desarrollador web especializado en la creación de aplicaciones
+             dinámicas y optimizadas.
+             Manejo tecnologías como HTML, CSS, JavaScript, PHP y bases de datos MySQL.
+             Busco oportunidades para aportar soluciones eficientes y seguir creciendo en el mundo del desarrollo.</p>
+        </section>
+        <section id="portafolio" class="seccion">
+            <h2>Mi Portafolio</h2>
+            <p>Todos mis proyectos de programación pueden ser encontrados en:</p>
+            <a href="https://github.com/Cperseb" target="_blank">
+                <button>Página GitHub</button>
+            </a>            
+        </section>
+        <section id="noticias" class="seccion">
+            <h2>Noticias</h2>
+            <p>Todos mis articulos de programación pueden ser encontrados en:</p>
+            <a href="https://www.linkedin.com/in/carlos-pertierra/recent-activity/articles/" target="_blank">
+                <button>Página de artículos</button>
+            </a>   
+        </section>
+        <section id="contacto" class="seccion">
+            <h2>Contacto</h2>
+            <p>Si quieres ponerte en contacto conmigo, puedes enviarme un correo electrónico:cperseb.trabajo@gmail.com</p>
+        </section>
+    </main>
+
+
 </body>
 </html>
