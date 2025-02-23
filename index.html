@@ -4,77 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Página Personal</title>
-    <link rel="stylesheet" href="carlos.css">
-    <script>
-        function mostrarSeccion(id) {
-            let secciones = document.querySelectorAll('.seccion');
-            secciones.forEach(seccion => seccion.style.display = 'none');
-            document.getElementById(id).style.display = 'block';
 
-            // Resaltar el botón activo
-            let botones = document.querySelectorAll('nav a');
-            botones.forEach(btn => btn.classList.remove('activo'));
-            document.querySelector(`nav a[data-section="${id}"]`).classList.add('activo');
-        }
-    </script>
+    <!-- Enlace al CSS para dar estilo a la web -->
+    <link rel="stylesheet" href="carlos.css">
+    
+    <!-- Carga de jQuery y mi script con defer para que se ejecute después del HTML -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="carlos.js" defer></script>
 </head>
 <body>
-
+    <!-- Encabezado con logo y mi nombre -->
     <header>
-        <h1>Mi Página Personal</h1>
+        <div class="logo-container">
+            <img src="logo cps.jpg" alt="Logo">
+            <h1>Carlos Pertierra Sebastián</h1>
+        </div>
     </header>
-
+    
+    <!-- Menú de navegación para cambiar de sección sin recargar la página -->
     <nav>
         <ul>
-            <li><a href="#" data-section="inicio" class="activo" onclick="mostrarSeccion('inicio')">Inicio</a></li>
-            <li><a href="#" data-section="curriculum" onclick="mostrarSeccion('curriculum')">Currículum</a></li>
-            <li><a href="#" data-section="servicios" onclick="mostrarSeccion('servicios')">Servicios</a></li>
-            <li><a href="#" data-section="portafolio" onclick="mostrarSeccion('portafolio')">Portafolio</a></li>
-            <li><a href="#" data-section="noticias" onclick="mostrarSeccion('noticias')">Noticias</a></li>
-            <li><a href="#" data-section="contacto" onclick="mostrarSeccion('contacto')">Contacto</a></li>
+            <li><a href="#" data-section="inicio" class="activo">Inicio</a></li>
+            <li><a href="#" data-section="curriculum">Currículum</a></li>
+            <li><a href="#" data-section="servicios">Servicios</a></li>
+            <li><a href="#" data-section="portafolio">Portafolio</a></li>
+            <li><a href="#" data-section="noticias">Noticias</a></li>
+            <li><a href="#" data-section="contacto">Contacto</a></li>
         </ul>
     </nav>
-
+    
     <main>
-        <section id="inicio" class="seccion" style="display: block;">
+        <!-- Sección de Inicio con presentación y lista de tecnologías -->
+        <section id="inicio" class="seccion">
             <h2>Bienvenido a mi página personal</h2>
             <div class="profile-pic">
                 <img src="carlosFoto.jpeg" alt="Foto de perfil">
             </div>
-            <p>Hola, soy Carlos, un hombre de 21 años que se ha formado en Desarrollador de Aplicaciones Web y esta en continuo aprendizaje.</p>
+            <p id="texto-escritura"></p> <!-- Aquí va el efecto de escritura automática -->
+
+            <h3>Tecnologías con las que trabajo:</h3>
+            <ul>
+                <li><strong>Frontend:</strong> HTML, CSS, JavaScript, TypeScript</li>
+                <li><strong>Backend:</strong> PHP, Java, JSP</li>
+                <li><strong>Bases de datos:</strong> MySQL</li>
+                <li><strong>Herramientas:</strong> GitHub, XAMPP, phpMyAdmin, NetBeans</li>
+            </ul>
+            <p>Actualmente, explorando Angular y Spring Boot.</p>
         </section>
+
+        <!-- Sección de Currículum con mis estudios -->
         <section id="curriculum" class="seccion">
             <h2>Mi Currículum</h2>
-            <p>-Desarrollador de aplicaciones web</p>
-            <p>-He realizado los siguientes estudios: ESO,bachillerato y DAW(esta ultima esta en curso)</p>
+            <p>Mis títulos académicos:</p>
+            <ul>
+                <li>Bachillerato</li>
+                <li>Grado Superior en Desarrollo de Aplicaciones Web (DAW)</li>
+                <li>Título B2 de Cambridge en inglés</li>
+            </ul>
         </section>
+
+        <!-- Sección de Servicios con tecnologías que uso -->
         <section id="servicios" class="seccion">
             <h2>Mis Servicios</h2>
-            <p>Soy desarrollador web especializado en la creación de aplicaciones
-             dinámicas y optimizadas.
-             Manejo tecnologías como HTML, CSS, JavaScript, PHP y bases de datos MySQL.
-             Busco oportunidades para aportar soluciones eficientes y seguir creciendo en el mundo del desarrollo.</p>
+            <p>Experiencia en desarrollo web con diversas tecnologías.</p>
+            <ul>
+                <li>Node.js</li>
+                <li>Java</li>
+                <li>PHP</li>
+                <li>MySQL</li>
+            </ul>
         </section>
+
+        <!-- Sección de Portafolio con proyectos destacados -->
         <section id="portafolio" class="seccion">
             <h2>Mi Portafolio</h2>
-            <p>Todos mis proyectos de programación pueden ser encontrados en:</p>
+            <p>Algunos de mis proyectos:</p>
+            <ul>
+                <li>Gestión de tareas con Java y MySQL</li>
+                <li>Tienda online con PHP y bases de datos</li>
+                <li>Gestión de usuarios con Node.js y Express</li>
+                <li>API REST con Spring Boot</li>
+            </ul>
             <a href="https://github.com/Cperseb" target="_blank">
-                <button>Página GitHub</button>
-            </a>            
+                <button>Visitar GitHub</button>
+            </a>
         </section>
+
+        <!-- Sección de Noticias con recomendaciones de sitios web -->
         <section id="noticias" class="seccion">
             <h2>Noticias</h2>
-            <p>Todos mis articulos de programación pueden ser encontrados en:</p>
+            <p>Recomiendo estos sitios para estar actualizado:</p>
+            <ul>
+                <li><a href="https://www.freecodecamp.org/news/" target="_blank">FreeCodeCamp News</a></li>
+                <li><a href="https://dev.to/" target="_blank">Dev.to</a></li>
+                <li><a href="https://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a></li>
+                <li><a href="https://www.hackernoon.com/" target="_blank">HackerNoon</a></li>
+            </ul>
             <a href="https://www.linkedin.com/in/carlos-pertierra/recent-activity/articles/" target="_blank">
-                <button>Página de artículos</button>
-            </a>   
+                <button>Ver mis artículos</button>
+            </a>
         </section>
+
+        <!-- Sección de Contacto con enlaces a mis redes -->
         <section id="contacto" class="seccion">
             <h2>Contacto</h2>
-            <p>Si quieres ponerte en contacto conmigo, puedes enviarme un correo electrónico:cperseb.trabajo@gmail.com</p>
+            <p>Si quieres ponerte en contacto conmigo:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:cperseb.trabajo@gmail.com">cperseb.trabajo@gmail.com</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/Cperseb" target="_blank">Cperseb</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/carlos-pertierra/" target="_blank">LinkedIn</a></li>
+            </ul>
         </section>
     </main>
-
-
 </body>
 </html>
